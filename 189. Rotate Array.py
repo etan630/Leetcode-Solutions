@@ -1,4 +1,3 @@
-#medium
 class Solution(object):
     def rotate(self, nums, k):
         """
@@ -12,9 +11,14 @@ class Solution(object):
         # 7 6 5 | 4 3 2 1
         # 5 6 7 | 1 2 3 4
         nums.reverse()
+
+        #handles cases where k is larger than size
+        k %= len(nums)
         x = 0
         start = 0
         end = k - 1
+
+
 
         # re-reverse first half while x < k and while not in the middle index
         while (x < k and start < end):
